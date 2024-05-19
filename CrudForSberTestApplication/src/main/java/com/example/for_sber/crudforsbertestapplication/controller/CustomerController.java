@@ -24,7 +24,7 @@ public class CustomerController {
 
     @PutMapping
     public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO){
-        return customerService.save(customerDTO);
+        return customerService.update(customerDTO);
     }
 
     @DeleteMapping("/{id}")
@@ -38,7 +38,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public CustomerDTO getCustomerById(Long id){
+    public CustomerDTO getCustomerById(@PathVariable Long id){
         return customerService.getById(id);
     }
 

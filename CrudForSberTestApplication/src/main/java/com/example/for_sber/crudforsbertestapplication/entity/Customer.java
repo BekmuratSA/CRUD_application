@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Costomer")
+@Table(name = "customer")
 @Builder
 public class Customer {
 
@@ -19,10 +19,10 @@ public class Customer {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "fistName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
 }

@@ -24,7 +24,7 @@ public class ProductController {
 
     @PutMapping
     public ProductDTO updateProduct(@RequestBody ProductDTO productDTO){
-        return productService.save(productDTO);
+        return productService.update(productDTO);
     }
 
     @DeleteMapping("/{id}")
@@ -38,7 +38,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ProductDTO getProduct(Long id){
+    public ProductDTO getProduct(@PathVariable Long id){
         return productService.getById(id);
     }
 
