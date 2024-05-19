@@ -4,6 +4,8 @@ import com.example.for_sber.crudforsbertestapplication.dto.CustomerDTO;
 import com.example.for_sber.crudforsbertestapplication.service.CustomerService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/customer")
 @RestController
 public class CustomerController {
@@ -20,8 +22,24 @@ public class CustomerController {
         return customerService.save(customerDTO);
     }
 
+    @PutMapping
+    public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO){
+        return customerService.save(customerDTO);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id){
         customerService.delete(id);
     }
+
+    @GetMapping
+    public List<CustomerDTO> getAllCustomer(){
+        return customerService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public CustomerDTO getCustomerById(Long id){
+        return customerService.getById(id);
+    }
+
 }
